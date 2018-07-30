@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 30, 2018 at 07:00 AM
+-- Generation Time: Jul 30, 2018 at 08:11 AM
 -- Server version: 5.6.24
 -- PHP Version: 5.6.8
 
@@ -38,7 +38,6 @@ CREATE TABLE IF NOT EXISTS `kisi` (
 --
 
 INSERT INTO `kisi` (`id_kisi`, `nama_kisi`, `id_mapel`, `total`) VALUES
-(2, 'Quiz 1', 3, 1),
 (3, 'UN', 1, 0);
 
 -- --------------------------------------------------------
@@ -50,7 +49,7 @@ INSERT INTO `kisi` (`id_kisi`, `nama_kisi`, `id_mapel`, `total`) VALUES
 CREATE TABLE IF NOT EXISTS `mapel` (
   `id_mapel` int(11) NOT NULL,
   `nama` varchar(50) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `mapel`
@@ -58,10 +57,9 @@ CREATE TABLE IF NOT EXISTS `mapel` (
 
 INSERT INTO `mapel` (`id_mapel`, `nama`) VALUES
 (1, 'Matematika'),
-(2, 'DASPRO'),
-(3, 'Bahasa Inggris'),
-(4, 'PAM'),
-(5, 'PBO');
+(6, 'DASPRO'),
+(7, 'PAM'),
+(8, 'PBO');
 
 -- --------------------------------------------------------
 
@@ -73,8 +71,8 @@ CREATE TABLE IF NOT EXISTS `nilai` (
   `id_nilai` int(11) NOT NULL,
   `id_ujian` int(11) DEFAULT NULL,
   `id_user` bigint(20) DEFAULT NULL,
-  `nilai` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+  `nilai` float NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `nilai`
@@ -82,7 +80,8 @@ CREATE TABLE IF NOT EXISTS `nilai` (
 
 INSERT INTO `nilai` (`id_nilai`, `id_ujian`, `id_user`, `nilai`) VALUES
 (1, 5, 3, 30),
-(2, 5, 4, 80);
+(2, 5, 4, 80),
+(6, 7, 3, 9.09091);
 
 -- --------------------------------------------------------
 
@@ -121,7 +120,7 @@ CREATE TABLE IF NOT EXISTS `soal` (
   `jawaban` varchar(1000) NOT NULL,
   `id_ujian` int(11) DEFAULT NULL,
   `id_kisi` int(11) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `soal`
@@ -137,7 +136,18 @@ INSERT INTO `soal` (`id_soal`, `id_mapel`, `pertanyaan`, `opsi1`, `opsi2`, `opsi
 (36, 1, 'Nilai minimum dari bentuk 5x + 15y pada daerah penyelesaian sistem pertidaksamaan 3y - 2x >= 15; 7x + 3y <= 42; x >= 0; y >=0 adalah...', '68', '75', '93', '156', '68', 5, NULL),
 (37, 1, 'Sebuah gedung pertunjukan teater hanya cukup ditempati penonton 40 orang dewasa dan anak. Harga tiket untuk orang dewasa Rp. 80.000,00 dan harga tiket untuk anak Rp. 40.000,00. Jika suatu rombongan ingin nonton bersama dan hanya mempunyai uang Rp 3.000.000,00 untuk membeli tiket orang dewasa dan tiket anak, maka model matemÃ¡tika dari masalah tersebut adalah â€¦.', 'x >= 0; y >= 0; 2x + y <= 150; x + y <= 40', 'x >= 0; y >= 0; 2x + y <= 150; x + y >= 40', 'x >= 0; y >= 0; 2x + y <= 75; x + y <= 40', 'x >= 0; y >= 0; 2x + y <= 75; x + y >= 40', 'x >= 0; y >= 0; 2x + y <= 150; x + y <= 40', 5, NULL),
 (38, 1, 'Sebuah bus sekolah paling banyak dapat memuat 50 penumpang. Tarif untuk seorang pelajar Rp 1.500,00 dan tarif untuk seorang mahasiswa Rp 2.500,00. Penghasilan yang diperoleh tidak kurang dari Rp 75.000,00. Misal banyaknya penumpang pelajar dan mahasiswa adalah x dan y, model matemÃ¡tika yang sesuai untuk permasalahan tersebut adalah...', 'x >= 0; y >= 0; x + y <= 50; 3x + 5y >= 150', 'x >= 0; y >= 0; x + y <= 50; 3x + 5y <= 150', 'x >= 0; y >= 0; x + y <= 50; 5x + 3y >= 150', 'x >= 0; y >= 0; x + y <= 50; 5x + 3y <= 150', 'x >= 0; y >= 0; x + y <= 50; 5x + 3y >= 150', 5, NULL),
-(39, 1, 'Perusahaan properti akan membangun ruko di atas tanah seluas 10.000 m^2 dengan tipe swalayan dan tipe kios. Untuk tipe swalayan memerlukan tanah 100 m^2 dan untuk kios 75 m^2. Jumlah rumah yang dibangun tidak lebih dari 125 unit. Keuntungan rumah tipe swalayan adalah Rp 5.000.000,00 per unit dan tipe kios adalah Rp 3.000.000,00 per unit. Keuntungan maksimum yang dapat diperoleh perusahaan properti dari penjualan rumah tersebut adalah ....', 'Rp. 425.000.000,00', 'Rp. 500.000.000,00', 'Rp. 600.000.000,00', 'Rp. 625.000.000,00', 'Rp. 625.000.000,00', 5, NULL);
+(39, 1, 'Perusahaan properti akan membangun ruko di atas tanah seluas 10.000 m^2 dengan tipe swalayan dan tipe kios. Untuk tipe swalayan memerlukan tanah 100 m^2 dan untuk kios 75 m^2. Jumlah rumah yang dibangun tidak lebih dari 125 unit. Keuntungan rumah tipe swalayan adalah Rp 5.000.000,00 per unit dan tipe kios adalah Rp 3.000.000,00 per unit. Keuntungan maksimum yang dapat diperoleh perusahaan properti dari penjualan rumah tersebut adalah ....', 'Rp. 425.000.000,00', 'Rp. 500.000.000,00', 'Rp. 600.000.000,00', 'Rp. 625.000.000,00', 'Rp. 625.000.000,00', 5, NULL),
+(41, 7, 'Method yang digunakan untuk meng-assign adapter ke sebuah ListView adalah:', 'assignAdaptop()', 'setAdaptor()', 'getAdapter()', 'setAdapter()', 'setAdapter()', 7, NULL),
+(42, 7, 'Method yang TIDAK digunakan atau TIDAK terkait dengan proses penggunaan internal storage adalah:', 'openFileOutput()', 'closed()', 'write()', 'read()', 'closed()', 7, NULL),
+(43, 7, 'Callback method yang dapat Anda gunakan pada sebuah sub class dari SQLiteOpenHelper adalah KECUALI:', 'onDowngrade()', 'onCreate()', 'onResume()', 'onUpgrade()', 'onResume()', 7, NULL),
+(44, 7, 'Method pada sebuah adapter yang digunakan untuk mengambil deklarasi layout XML untuk setiap item ListView dan meng-assign data ke masing-masing baris item adalah:', 'getAdapter()', 'getAdapterView()', 'getView()', 'setView()', 'getView()', 7, NULL),
+(45, 7, 'Penyimpanan data yang primitive pada sebuah aplikasi Android dalam bentuk pasangan key-value menggunakan:', 'SQLite', 'External Storage', 'Internal Storage', 'Shared Preferences', 'Shared Preferences', 7, NULL),
+(46, 7, 'Faktor yang paling TIDAK mempengaruhi pemilihan jenis penyimpanan data pada Android adalah:', 'Scalability aplikasi di masa depan', 'Berapa banyak space yang dibutuhkan untuk data', 'Target pengguna aplikasi', 'Algoritma pada pengunduhan data', 'Algoritma pada pengunduhan data', 7, NULL),
+(47, 7, 'SQLite adalah sebuah database engine yang memiliki karakter:', 'C) Server-based', 'A) Self-contained', 'B) Serverless', 'A dan B benar', 'A dan B benar', 7, NULL),
+(48, 7, 'Selain oleh ListView, adapter juga dapat digunakan oleh:', 'GridView', 'Gallery', 'StackView', 'Semua Benar', 'Semua Benar', 7, NULL),
+(49, 7, 'Method yang dapat digunakan pada saat bekerja dengan objek Cursor adalah, KECUALI', 'getCount()', 'getRow()', 'moveToFirst()', 'moveToNext()', 'getRow()', 7, NULL),
+(50, 7, 'Nama kelas yang digunakan untuk menampung data hasil query pada database ketika menggunakan SQLite adalah:', 'Cursor', 'Cursors', 'ContentValues', 'contentValues', 'Cursor', 7, NULL),
+(51, 7, '1', 'q', 'w', 'e', 'r', 't', 7, NULL);
 
 -- --------------------------------------------------------
 
@@ -170,14 +180,15 @@ CREATE TABLE IF NOT EXISTS `ujian` (
   `id_mapel` int(11) NOT NULL,
   `status` int(11) NOT NULL,
   `total` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `ujian`
 --
 
 INSERT INTO `ujian` (`id_ujian`, `nama_ujian`, `id_mapel`, `status`, `total`) VALUES
-(5, 'UN', 1, 1, 10);
+(5, 'UN', 1, 1, 10),
+(7, 'UAS Teori 2018', 7, 1, 11);
 
 -- --------------------------------------------------------
 
@@ -269,12 +280,12 @@ ALTER TABLE `kisi`
 -- AUTO_INCREMENT for table `mapel`
 --
 ALTER TABLE `mapel`
-  MODIFY `id_mapel` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+  MODIFY `id_mapel` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `nilai`
 --
 ALTER TABLE `nilai`
-  MODIFY `id_nilai` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+  MODIFY `id_nilai` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `role`
 --
@@ -284,7 +295,7 @@ ALTER TABLE `role`
 -- AUTO_INCREMENT for table `soal`
 --
 ALTER TABLE `soal`
-  MODIFY `id_soal` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=41;
+  MODIFY `id_soal` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=52;
 --
 -- AUTO_INCREMENT for table `status`
 --
@@ -294,7 +305,7 @@ ALTER TABLE `status`
 -- AUTO_INCREMENT for table `ujian`
 --
 ALTER TABLE `ujian`
-  MODIFY `id_ujian` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+  MODIFY `id_ujian` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `user`
 --

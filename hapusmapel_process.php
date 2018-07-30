@@ -23,16 +23,19 @@
 			$hapus_nilai = mysql_query("DELETE FROM nilai WHERE id_ujian='$id_ujian'");
 
 			$hapus_soal = mysql_query("DELETE FROM soal WHERE id_mapel='$id_mapel'");
-
-			$hapus_ujian = mysql_query("DELETE FROM ujian WHERE id_ujian='$id_ujian'");
 		}
+
+
+		$hapus_ujian = mysql_query("DELETE FROM ujian WHERE id_mapel='$id_mapel'");
+
+		$hapus_kisi	= mysql_query("DELETE FROM kisi WHERE id_mapel='$id_mapel'");
 
 		$hapus_mapel= mysql_query("DELETE FROM mapel WHERE id_mapel='$id_mapel'");
 
 		if ($hapus_mapel) {
-			echo "Berhasil";
+			echo "<script>alert('Berhasil dihapus'); window.location=history.go(-1); </script>";
 		}else{
-			echo "Gagal";
+			die("<script>alert('Gagal'); window.location=history.go(-1); </script>");
 		}
 	}
 ?>

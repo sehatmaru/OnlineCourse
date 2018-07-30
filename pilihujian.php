@@ -33,7 +33,7 @@
 <div class="login" style="line-height: 100%;">
 	<div class="main-agileits">
 		<div class="form-w3agile">
-			<h2>Pilih Ujian</h2><br>
+			<h2>Ujian</h2><br>
 			<?php if (mysql_num_rows($query_ujian)==0) { ?>
 				<div class="alert alert-info" role="alert">
 					<h4 class="alert-heading">Pemberitahuan</h4>

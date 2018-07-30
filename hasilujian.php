@@ -27,7 +27,7 @@
 				<h4 class="alert-heading">Terima kasih!</h4>
 				<center><p>Anda telah menyelesaikan semua soal ujian. Silahkan melihat detail poin soal di bawah ini. Jika ada masalah silahkan hubungi guru atau admin.</p></center>
 				<hr>
-				<center><h4 class="mb-0">Skor &#10004 = <?php echo $nilaibenar ?></h4></center>
+				<center><h4 class="mb-0">Skor &#10004 = <?php echo number_format($nilaibenar, 2) ?></h4></center>
 			</div>
 	<table class="table">
         <thead>
@@ -64,7 +64,7 @@
          ?>
     </table>
   	
-  	<h2>Total Skor : <?php echo ($nilai) ?></h2><br>
+  	<h2>Total Skor : <?php echo number_format($nilai, 2) ?></h2><br>
     <?php if ($_SESSION['role']=="siswa") { ?>
         <a href="index.php" class="btn btn-info btn-lg active" role="button" aria-pressed="true">Selesai &#10004</a>
     <?php } elseif ($_SESSION['role']=="guru") { ?>
