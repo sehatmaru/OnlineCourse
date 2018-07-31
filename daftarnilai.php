@@ -15,7 +15,7 @@
 <div class="check-out">	 
 	<div class="container">	 
 		<div class="spec" style="margin-left: 250px; margin-right: 250px;">
-			<h3>Daftar Ujian</h3>
+			<h3>Nilai</h3>
 			<table class="table">
 				<tr>
 					<th class="t-head" width="10"><center>No</center></th>

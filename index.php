@@ -24,7 +24,7 @@
     <div class="login">
         <div class="form-w3agile" style="margin-top: 55px;">
             <div class="alert alert-info" role="alert" style="margin-right: 300px; margin-left: 300px; line-height: 100%">
-                <h1 class="alert-heading" style="color: #006DB6;">Online Course</h1>
+                <h3 class="alert-heading" style="color: #006DB6;">Ujian Online SMPS IT Al Hijrah</h3>
                 <hr>
                 <p class="mb-0">Silahkan membaca petunjuk penggunaan terlebih dahulu :</p><br>
                 <ol>

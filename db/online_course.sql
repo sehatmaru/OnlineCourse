@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 30, 2018 at 08:11 AM
+-- Generation Time: Jul 31, 2018 at 08:04 PM
 -- Server version: 5.6.24
 -- PHP Version: 5.6.8
 
@@ -31,7 +31,7 @@ CREATE TABLE IF NOT EXISTS `kisi` (
   `nama_kisi` varchar(300) NOT NULL,
   `id_mapel` int(11) NOT NULL,
   `total` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `kisi`
@@ -72,7 +72,7 @@ CREATE TABLE IF NOT EXISTS `nilai` (
   `id_ujian` int(11) DEFAULT NULL,
   `id_user` bigint(20) DEFAULT NULL,
   `nilai` float NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `nilai`
@@ -81,7 +81,8 @@ CREATE TABLE IF NOT EXISTS `nilai` (
 INSERT INTO `nilai` (`id_nilai`, `id_ujian`, `id_user`, `nilai`) VALUES
 (1, 5, 3, 30),
 (2, 5, 4, 80),
-(6, 7, 3, 9.09091);
+(8, 7, 3, 27.27),
+(9, 7, 4, 45.45);
 
 -- --------------------------------------------------------
 
@@ -120,7 +121,7 @@ CREATE TABLE IF NOT EXISTS `soal` (
   `jawaban` varchar(1000) NOT NULL,
   `id_ujian` int(11) DEFAULT NULL,
   `id_kisi` int(11) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `soal`
@@ -146,8 +147,7 @@ INSERT INTO `soal` (`id_soal`, `id_mapel`, `pertanyaan`, `opsi1`, `opsi2`, `opsi
 (47, 7, 'SQLite adalah sebuah database engine yang memiliki karakter:', 'C) Server-based', 'A) Self-contained', 'B) Serverless', 'A dan B benar', 'A dan B benar', 7, NULL),
 (48, 7, 'Selain oleh ListView, adapter juga dapat digunakan oleh:', 'GridView', 'Gallery', 'StackView', 'Semua Benar', 'Semua Benar', 7, NULL),
 (49, 7, 'Method yang dapat digunakan pada saat bekerja dengan objek Cursor adalah, KECUALI', 'getCount()', 'getRow()', 'moveToFirst()', 'moveToNext()', 'getRow()', 7, NULL),
-(50, 7, 'Nama kelas yang digunakan untuk menampung data hasil query pada database ketika menggunakan SQLite adalah:', 'Cursor', 'Cursors', 'ContentValues', 'contentValues', 'Cursor', 7, NULL),
-(51, 7, '1', 'q', 'w', 'e', 'r', 't', 7, NULL);
+(50, 7, 'Nama kelas yang digunakan untuk menampung data hasil query pada database ketika menggunakan SQLite adalah:', 'Cursor', 'Cursors', 'ContentValues', 'contentValues', 'Cursor', 7, NULL);
 
 -- --------------------------------------------------------
 
@@ -188,7 +188,7 @@ CREATE TABLE IF NOT EXISTS `ujian` (
 
 INSERT INTO `ujian` (`id_ujian`, `nama_ujian`, `id_mapel`, `status`, `total`) VALUES
 (5, 'UN', 1, 1, 10),
-(7, 'UAS Teori 2018', 7, 1, 11);
+(7, 'UAS Teori 2018', 7, 1, 10);
 
 -- --------------------------------------------------------
 
@@ -275,7 +275,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `kisi`
 --
 ALTER TABLE `kisi`
-  MODIFY `id_kisi` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+  MODIFY `id_kisi` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `mapel`
 --
@@ -285,7 +285,7 @@ ALTER TABLE `mapel`
 -- AUTO_INCREMENT for table `nilai`
 --
 ALTER TABLE `nilai`
-  MODIFY `id_nilai` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+  MODIFY `id_nilai` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `role`
 --
@@ -295,7 +295,7 @@ ALTER TABLE `role`
 -- AUTO_INCREMENT for table `soal`
 --
 ALTER TABLE `soal`
-  MODIFY `id_soal` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=52;
+  MODIFY `id_soal` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=51;
 --
 -- AUTO_INCREMENT for table `status`
 --

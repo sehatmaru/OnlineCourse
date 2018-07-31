@@ -14,7 +14,7 @@
 <body>
 <div class="check-out">	 
 	<div class="container">	 
-		<div class="spec" style="margin-left: 250px; margin-right: 250px;">
+		<div class="spec" style="margin-left: 200px; margin-right: 200px;">
 			<h3>Daftar Ujian</h3>
 			<table style="margin-bottom: 10px;">
 				<tr>
@@ -30,7 +30,7 @@
 					<th class="t-head"><center>Mata Pelajaran</center></th>
 					<th class="t-head"><center>Status</center></th>
 					<th class="t-head"><center>Jumlah Soal</center></th>
-					<th class="t-head" width="100"><center>Operasi</center></th>
+					<th class="t-head" width="250"><center>Operasi</center></th>
 		  		</tr>
 		  		<?php if (mysql_num_rows($query_ujian)==0) { ?>
 		  		<tr><td colspan="6" class="t-data">Tidak ada Mapel.</td></tr>
@@ -58,6 +58,18 @@
 							<td class="t-data">
 								<a class="btn btn-primary btn-sm" href="daftarsoal.php?mapel=<?php echo($detail['id_mapel']) ?>&id_ujian=<?php echo($detail['id_ujian']) ?>"><i class="fa fa-eye fa-lg"></i> Daftar Soal
 								</a>
+							<?php if ($_SESSION['role']=="admin") { ?>
+								<div class="btn-group">
+									<a class="btn btn-success" href="#"><i class="fa fa-navicon fa-fw"></i> Status</a>
+									<a class="btn btn-success dropdown-toggle" data-toggle="dropdown" href="#">
+								    	<span class="fa fa-caret-down" title="Toggle dropdown menu"></span>
+								  	</a>
+								  	<ul class="dropdown-menu">
+									    <li><a href="ubahstatus_process.php?id_ujian=<?php echo($detail['id_ujian']) ?>&s=1"><i class="fa fa-check fa-fw"></i> Aktif</a></li>
+									    <li><a href="ubahstatus_process.php?id_ujian=<?php echo($detail['id_ujian']) ?>&s=2"><i class="fa fa-ban fa-fw"></i> Non-Aktif</a></li>
+									</ul>
+								</div>
+							<?php } ?>
 							</td>
 				  		</tr>
 		  		<?php }} ?>

@@ -15,7 +15,7 @@
     <div class="container">
         <h2 style="padding-bottom: 30px; margin-top: 30px;">Selamat datang, <b><?php echo($_SESSION['nama']) ?></b></h2>
         <div class="col-md-3 bb-grids bb-left-agileits-w3layouts">
-            <a href="daftarmapel.php?tipe=nilai"><div class="bb-left-agileits-w3layouts-inner" style="background-color: #ff5063;">
+            <a href="daftarnilai.php"><div class="bb-left-agileits-w3layouts-inner" style="background-color: #ff5063;">
                 <h3><i class="fa fa-book"></i> DAFTAR</h3>
                 <h4><span>NILAI</span></h4>
             </div></a>

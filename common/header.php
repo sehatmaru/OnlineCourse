@@ -1,7 +1,7 @@
 <?php
 	session_start();
 
-	include 'common/koneksi.php';
+	include $_SERVER['DOCUMENT_ROOT']."/online_course/common/koneksi.php";
 
 	if (!isset($_SESSION['username'])) {
         $_SESSION['role'] = "siswa";
@@ -107,7 +107,7 @@
 			  	<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 			    	<ul class="nav navbar-nav">
 					<?php if ($_SESSION['role']=="siswa") { ?>
-						<li class=" active"><a href="index.php" class="hyper "><span>Home</span></a></li>
+						<a href="#" class="navbar-left"><img src="images/logo.jpeg" style="width: 50%; height: 50%;"></a>
 						<?php if (isset($_SESSION['username'])) { ?>
 						    <li><a href="datanilai.php"><span class="glyphicon glyphicon-ok"></span> Data Nilai</a></li>
 						<?php }

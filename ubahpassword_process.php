@@ -17,7 +17,7 @@
 			$query = mysql_query("UPDATE user SET password='$passwordb' WHERE username='$username'");
 			echo "<script>alert('Password berhasil diubah.'); window.location = 'datadiri.php'</script>";
 		}else{
-			die("<script>alert('Password lama salah.');window.location=history.go(-1); </script>");
+			die("<script>alert('Password lama salah.');window.location=history.go(-1);</script>");
 		}
 	}
 ?>

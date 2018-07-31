@@ -18,8 +18,9 @@
         }
     </style>
 </head>
+<body style="background-image: url('images/background.jpg'); background-position: center;background-repeat: no-repeat;background-size: cover; height: 100%;">
 <div class="login">
-	<div class="main-agileits" style="margin-top: 25px;">
+	<div class="main-agileits" style="margin-top: 25px; background: #fff;">
 		<div class="form-w3agile">
 			<h3>Masuk</h3>
 			<form action="masuk_process.php?op=in" method="post">
@@ -47,7 +48,9 @@
 			<div class="clearfix"></div>
 		</div>
 	</div>
-</div>
+</div>	
+</body>
+
 <footer>
     <div class="footer" style="background-color: #006DB6;">
         <div class="container">
